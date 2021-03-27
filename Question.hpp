@@ -3,19 +3,24 @@
 #include <iostream>
 #include <vector>
 
-#define ANSWERS 5
-
 class Question 
 {
 public:
-	Question(std::string p_q, std::string p_a1, std::string p_a2, 
-		std::string p_a3, std::string p_a4, int p_cor);
-	
 	void printQ();
+	void testPrint();
 
-	void compAnswer(int p_ans);
+	void compAnswer();
 
-private:
-	std::vector<std::string> questionAndAnswers;
+	// Currently does nothing, couldn't work out how to load
+	// through class method
+	void loadQuestion(std::ifstream &p_qFile);
+
+    std::string q;
+	std::string ans1;
+	std::string ans2;
+	std::string ans3;
+	std::string ans4;
 	int correct;
+	char inAnswer;
 };
+
